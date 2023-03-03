@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.hamburger {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 99999;
+}
+.hamburger .bar {
+  width: 34px;
+  height: 6px;
+  background-color: red;
+  border-radius: 3px;
+  position: absolute;
+  transition: 0.3s;
+}
+.hamburger .bar:nth-child(1) {
+  transition: 0.08s;
+}
+.hamburger .bar:nth-child(2) {
+  top: 9px;
+}
+.hamburger .bar:nth-child(3) {
+  top: 18px;
+}
+.hamburger.active .bar {
+  background-color: #fff;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateX(-100px);
+}
+.hamburger.active .bar:nth-child(2) {
+  transform: rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+}
+
+.hamburger.active ~ .overlay {
+  display: block;
+}
+
+.menu {
+  border-bottom-right-radius: 10px;
+  font-size: 24px;
+  transform: translateX(-100%);
+  transition: 0.4s;
+  padding-left: 20px;
+  padding-top: 10px;
+  position: absolute;
+  z-index: 2;
+  height: 100vh;
+  width: 200px;
+  top: 0;
+  background-color: rgb(218, 40, 40);
+  padding: 50px 20px 20px 20px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+.menu.active {
+  transform: translateX(0);
+}
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menu ul a {
+  color: #000000;
+  gap: 10px;
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
